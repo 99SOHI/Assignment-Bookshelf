@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Assignment Bookshelf</title>
+  </head>
+  <body>
+    <header>
+      <h1 class="title">Book Tracker</h1>
+    </header>
+    <main>
+      <div class="main-container">
+        <div class="input-container">
+          <h2>Add a new book</h2>
+          <form id="book-input">
+            <div class="input">
+              <label for="book-title">Title</label>
+              <input type="text" id="book-title" required />
+            </div>
+            <div class="input">
+              <label for="book-author">Author</label>
+              <input type="text" id="book-author" required />
+            </div>
+            <div class="input">
+              <label for="book-year">Year</label>
+              <input type="number" id="book-year" required />
+            </div>
+            <div class="is-complete-check">
+              <label for="is-complete">Completed</label>
+              <input type="checkbox" id="is-complete" />
+            </div>
+            <button id="submit" type="submit" class="blue">
+              Insert <span>a new</span> book
+            </button>
+          </form>
+        </div>
+
+        <div class="bookshelf">
+          <div class="search-container">
+            <h4>Find a Book</h4>
+            <form id="book-search">
+              <input type="text" id="search-title" placeholder="Insert title" />
+            </form>
+          </div>
+
+          <div class="tabs">
+            <button class="tab-links active">Currently reading</button>
+            <button class="tab-links">Completed Books</button>
+          </div>
+
+          <div id="tab-incomplete" class="tabs-content active">
+            <h2>Currently reading</h2>
+            <div id="incompleted-list" class="book-list">
+              <!-- <div class="book">
+                <h3>Title</h3>
+                <p>Author :</p>
+                <p>Year :</p>
+
+                <div class="cta">
+                  <button class="green">Completed</button>
+                  <button class="red">Delete book</button>
+                </div>
+              </div> -->
+            </div>
+          </div>
+          <div id="tab-completed" class="tabs-content">
+            <h2>Completed Books</h2>
+            <div id="completed-list" class="book-list">
+              <!-- <div class="book">
+                  <h3>Title</h3>
+                  <p>Author :</p>
+                  <p>Year :</p>
+                  <p>User Rating :</p>
+
+                  <div class="cta">
+                    <button class="blue">Move to Currently reading</button>
+                    <button class="red">Delete book</button>
+                  </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-container">
+        <h3>Want to rate "<span id="rated-book-title"></span>" ?</h3>
+        <select name="rating" id="rating-select">
+          <option value="unrated" disabled selected>Select Rating</option>
+          <option value="excellent">Excellent</option>
+          <option value="very-good">Very Good</option>
+          <option value="good">Good</option>
+          <option value="weak">Weak</option>
+          <option value="poor">Poor</option>
+        </select>
+        <div class="rating-button">
+          <button class="red" id="rate-later">Do it later</button>
+          <button class="green" id="rate-book">Rate it</button>
+        </div>
+      </div>
+
+      <div id="overlay"></div>
+      <div id="delete-toast">
+        <span id="deleted-book-title"></span> has been deleted
+      </div>
+    </main>
+
+    <footer>
+      <p>Muhamad Alwi Pratama Nugraha - Dicoding Assignment</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
